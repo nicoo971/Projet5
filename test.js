@@ -28,6 +28,6 @@ function TestScopeText() {
 
 TestEpisode();
 let resultat = TestScopeText();
-console.log('result', resultat)
+console.log('result', resultats)
 
 //alert("coucou")
