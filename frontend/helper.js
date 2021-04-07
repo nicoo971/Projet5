@@ -33,7 +33,7 @@ function addteddy(teddy) {
 }
 
 function savePanier(panier) {
-    let panierstr = JSON.stringify(panier);
+    let panierstr = JSON.stringify(panier); //conversion en caractére "stringify" pour le panier
     localStorage.setItem("panier", panierstr);
     
 }

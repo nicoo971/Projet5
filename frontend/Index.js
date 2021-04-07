@@ -16,6 +16,5 @@ fetch("http://localhost:3000/api/teddies")
       document.getElementById("containner").innerHTML += html;
     }
 
-    // for off
   });
 

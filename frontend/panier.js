@@ -52,9 +52,9 @@ function envoidelacommande(e) {
     var data = {
         contact: {
             firstName: nameElt.value,
-            lastName: "pouget",
-            address: "nico",
-            city: "nimes",
+            lastName: lastnameElt,
+            address: adressElt,
+            city: cityElt,
             email: emailElt.value,
         },
         products: productIdList
