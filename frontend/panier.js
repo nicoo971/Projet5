@@ -40,11 +40,18 @@ calculprix();
 function envoidelacommande(e) {
     e.preventDefault();
     const emailElt = document.getElementById("email");
-    alert(emailElt.value);
+    const nameElt = document.getElementById("name");
+    const lastnameElt = document.getElementById("lastname");
+    const adresseElt = document.getElementById("adresse");
+    const cityElt = document.getElementById("city");
+    
+    
 
-    if (emailElt.value==""){
+
+    if (emailElt.value=="" ||nameElt.value=="" ||lastnameElt.value==""||adresseElt.value==""||cityElt.value==""){
       
         alert("Merci de remplit tout les champs");
+         console.log("Merci de remplit tout les champs")
         return;
         // pour email non remplie
     }
@@ -52,9 +59,9 @@ function envoidelacommande(e) {
     var data = {
         contact: {
             firstName: nameElt.value,
-            lastName: lastnameElt,
-            address: adressElt,
-            city: cityElt,
+            lastName: lastnameElt.value,
+            address: adresseElt.value,
+            city: cityElt.value,
             email: emailElt.value,
         },
         products: productIdList
