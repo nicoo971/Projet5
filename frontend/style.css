@@ -1,16 +1,51 @@
-section#containner,#containnerpanier {display:flex;
-    
+section#containner,
+#containnerpanier {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     font-variant: all-small-caps;
 }
-.card-body{
- align-items: center;
+
+.card {
+    margin-bottom: 10px;
 }
+
+.card-body {
+    align-items: center;
+}
+
 .card-img-top {
-    height: 200px;
+    height: 300px;
+    object-fit: cover;
 }
+
+.card-img- {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .btn-primary {
     color: #fff;
     background-color: #007bff;
-    border-color: #007bff;
+    border-color: #ae00ff;
     border-bottom-width: thick;
+}
+
+form {
+    display: inline-grid;
+    margin: 30px auto;
+}
+
+.titre {
+    text-align: center;
+}
+
+.envoidelacommande {
+    display: flex;
+    justify-content: center;
+}
+
+#addtocart:active {
+    background-color: lightgray;
 }

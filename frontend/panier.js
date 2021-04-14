@@ -1,23 +1,23 @@
 let panier = getPanier();
-let productIdList =[];
+let productIdList = [];
 
 for (let i = 0; i < panier.length; i++) {
     let titre = "le cours";
     let teddy = panier[i];
     console.log(teddy);
     productIdList.push(teddy._id);
-    // a ecrcire
+
     let html = `  <div class="card" style="width: 18rem;">
 <img src="${teddy.imageUrl}" class="card-img-top" alt="...">
 <div class="card-body">
   <h5 class="card-title">${teddy.name}</h5>
-  <p class="card-text">${teddy.price}*${teddy.quantity}=${
-    teddy.price * teddy.quantity
+  <p class="card-text">${priceToEuro(teddy.price)}*${teddy.quantity}=${
+    priceToEuro(teddy.price * teddy.quantity)
   }</p>
  
 </div>
   </div>`;
-  // html fais fait a partir du js la carte des teddys
+    // html fais fait a partir du js la carte des teddys
     const containerElt = document.getElementById("containnerpanier");
     containerElt.innerHTML += html;
     // inerthtmlconnaître et de modifier le contenu d'une balise HTML
@@ -31,7 +31,7 @@ function calculprix() {
         // formules pour connaitre le total du panier
     }
     const prixtotalElt = document.getElementById("prixtotal");
-    prixtotalElt.innerHTML += total;
+    prixtotalElt.innerHTML += priceToEuro(total);
 }
 
 calculprix();
@@ -44,18 +44,18 @@ function envoidelacommande(e) {
     const lastnameElt = document.getElementById("lastname");
     const adresseElt = document.getElementById("adresse");
     const cityElt = document.getElementById("city");
-    
-    
 
 
-    if (emailElt.value=="" ||nameElt.value=="" ||lastnameElt.value==""||adresseElt.value==""||cityElt.value==""){
-      
+
+
+    if (emailElt.value == "" || nameElt.value == "" || lastnameElt.value == "" || adresseElt.value == "" || cityElt.value == "") {
+
         alert("Merci de remplit tout les champs");
-         console.log("Merci de remplit tout les champs")
+        console.log("Merci de remplit tout les champs")
         return;
         // pour email non remplie
     }
-    
+
     var data = {
         contact: {
             firstName: nameElt.value,
@@ -65,7 +65,7 @@ function envoidelacommande(e) {
             email: emailElt.value,
         },
         products: productIdList
-        // recup tt les prduits du panier avec un tableau 
+            // recup tt les prduits du panier avec un tableau 
     };
 
     var option = {
@@ -83,9 +83,9 @@ function envoidelacommande(e) {
         .then((dataorder) => {
             localStorage.clear();
             // suppersion du des donnée du panier aprés commande
-            document.getElementById("containner").innerHTML= `<h2>merci ${dataorder.contact.firstName} pour votre commande</h2>
+            document.getElementById("containner").innerHTML = `<h2>merci ${dataorder.contact.firstName} pour votre commande</h2>
             <h3>votre numéro de commande est ${dataorder.orderId}</h3>`
         });
 
-        
+
 }

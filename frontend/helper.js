@@ -7,10 +7,16 @@ function getPanier() {
     return JSON.parse(panier);
 }
 
+function priceToEuro(prixOriginal) {
+    let prixEnEuro = (prixOriginal / 100);
+    let prixEnText = prixEnEuro.toFixed(2);
+    return prixEnText + " €";
+}
+
 function addteddy(teddy) {
     let panier = getPanier()
-    // console.log(panier)
-    // console.log(teddy)
+        // console.log(panier)
+        // console.log(teddy)
 
     //regarder si teddy._id déja dans le panier   //Si oui
     //   incrémenter qté de 1
@@ -35,5 +41,5 @@ function addteddy(teddy) {
 function savePanier(panier) {
     let panierstr = JSON.stringify(panier); //conversion en caractére "stringify" pour le panier
     localStorage.setItem("panier", panierstr);
-    
+
 }
